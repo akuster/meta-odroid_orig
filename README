@@ -116,3 +116,5 @@ the syslinux boot: prompt, or the boot: prompt contains strange
 characters), try doing this first:
 
 # dd if=/dev/zero of=/dev/sdf bs=1M count=512
+# Restore Ubuntu image.
+# sudo dd if=odroidu2_20130104-linaro-ubuntu-desktop-uSDeMMC.img of=/dev/sdc bs=4M
