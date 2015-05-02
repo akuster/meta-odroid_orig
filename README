@@ -118,3 +118,5 @@ characters), try doing this first:
 # dd if=/dev/zero of=/dev/sdf bs=1M count=512
 # Restore Ubuntu image.
 # sudo dd if=odroidu2_20130104-linaro-ubuntu-desktop-uSDeMMC.img of=/dev/sdc bs=4M
+# To write a files system to sd card
+# sudo tar -C /dev/{part 2} -jxf tmp/deploy/images/odroid-ux3/core-image-odroid-odroid-ux3.tar.bz2
