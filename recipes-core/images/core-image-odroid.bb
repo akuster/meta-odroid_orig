@@ -1,4 +1,4 @@
-ESCRIPTION = "A small image with a few debugging and system utilities."
+DESCRIPTION = "A small image with a few debugging and system utilities."
 
 IMAGE_INSTALL = "packagegroup-core-boot \
     ${ROOTFS_PKGMANAGE_BOOTSTRAP} \
