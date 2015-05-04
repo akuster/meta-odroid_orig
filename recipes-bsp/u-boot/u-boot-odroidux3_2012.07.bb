@@ -4,6 +4,8 @@ DESCRIPTION = "u-boot bootloader for Odroid UX3 devices supported by the hardker
 
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}-${PV}:"
 
+PROVIDES += "u-boot"
+
 SRCREV = "d80b05d5624ecba99c15ee2a7b3f59ebf6f8f1e8"
 BRANCH = "odroidxu3-v2012.07"
 
