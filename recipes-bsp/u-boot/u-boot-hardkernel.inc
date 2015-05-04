@@ -15,7 +15,7 @@ SRC_URI = "${UBOOT_REPO_URI};branch=${BRANCH}"
 
 PR = "${PV}+git${SRCPV}"
 
-UBOOT_SUFFIX = "bin"
+UBOOT_SUFFIX ?= "bin"
 
 do_deploy_append () {
     install -d ${DEPLOYDIR}
