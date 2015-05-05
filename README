@@ -1,5 +1,5 @@
 This README file contains information on building the meta-odroid
-BSP layer, and booting the images contained in the /binary directory.
+BSP layer.
 Please see the corresponding sections below for details.
 
 
@@ -16,7 +16,7 @@ This layer depends on:
   branch: master
 
   URI: git://git.openembedded.org/meta-openembedded
-  layers: meta-oe, meta-gnome, meta-networking, meta-xfce
+  layers: meta-oe, meta-gnome, meta-python, meta-networking, meta-xfce
   branch: master
 
   URI: https://github.com/akuster/meta-odroid
@@ -36,28 +36,34 @@ Table of Contents
 =================
 
   I. Building the meta-odroid BSP layer
- II. Booting the images in /binary
-
 
 I. Building the meta-odroid BSP layer
 ========================================
 
 
-  yocto/meta-xxxx \
-  yocto/meta-xxxx/meta-odroid \
+  yocto/meta-odroid \
 
 To enable the odroid layer, add the odroid MACHINE to local.conf:
 
   MACHINE ?= "odroid"
 
-You should then be able to build a odroid image as such:
+You should then be able to build a basic odroid image as such:
 
   $ source oe-init-build-env
   $ bitbake core-image-odroid
 
+You should then be able to build a XFCE odroid image as such:
 
-# dd if=/dev/zero of=/dev/sdf bs=1M count=512
-# Restore Ubuntu image.
-# sudo dd if=odroidu2_20130104-linaro-ubuntu-desktop-uSDeMMC.img of=/dev/sdc bs=4M
-# To write a files system to sd card
-# sudo tar -C /dev/{part 2} -jxf tmp/deploy/images/odroid-ux3/core-image-odroid-odroid-ux3.tar.bz2
+layers:
+    {path}/poky/meta \
+    {path}/poky/meta-yocto \
+    {path}/meta-openembedded/meta-oe \
+    {path}/meta-openembedded/meta-python \
+    {path}/meta-openembedded/meta-networking \
+    {path}/meta-openembedded/meta-gnome \
+    {path}/meta-openembedded/meta-xfce \
+    {path}/meta-odroid \
+
+  $ source oe-init-build-env
+  $ bitbake core-image-odroid-xfce
+
